@@ -1,0 +1,109 @@
+Generateur:
+
+<Generateur>:
+    MDBoxLayout:
+        orientation: 'vertical'
+        # md_bg_color: 255/255, 57/255, 57/255, .3
+        spacing: 10
+        padding: ('10dp', '0dp', '10dp', '10dp')
+
+        MDLabel:
+            text: '[b][u][size=40]GENERATEUR[/size][/u][/b] '
+            markup: True
+            halign: 'center'
+            allow_selection: True
+            allow_copy: True
+
+        MDGridLayout:
+            cols: 2
+            spacing: 10
+            radius: [20, 0, 20, 0]
+            spacing: '10dp'
+            md_bg_color: 55/255, 57/255, 57/255, .3
+            padding: ('10dp', '0dp', '10dp', '10dp')
+
+            padding: 10
+
+            MDLabel:
+                text: 'Length :'
+                allow_selection: True
+                allow_copy: True
+                
+            MDTextField:
+                id: length_password
+                hint_text: 'length'
+                mode: 'line'
+                pos_hint: {'center_x': .5, 'center_y': 1}
+                multiline: True
+
+        MDGridLayout:
+            cols: 3
+            spacing: 10
+            adaptive_height: True
+            radius: [20, 0, 20, 0]
+            spacing: '10dp'
+            md_bg_color: 55/255, 57/255, 57/255, .3
+            radius: [15, 0, 15, 0]
+            padding: 10
+
+            MDLabel:
+                text: 'Special Characters :'
+            MDTextField:
+                id: number_special_character
+            
+            MDSwitch:
+                id: special_character_switch
+                active: False
+                icon_active: 'check'
+
+            MDLabel:
+                text: 'Uppercase :'
+            MDTextField:
+                id: number_character_uppercase
+            
+            MDSwitch:
+                id: uppercase_switch
+                active: False
+                icon_active: 'check'
+
+            MDLabel:
+                text: 'Lowercase :'
+            MDTextField:
+                id: number_character_lowercase
+                
+            MDSwitch:
+                id: lowercase_switch
+                active: False
+                icon_active_color: "green"
+                icon_active: 'check'
+
+
+            MDLabel:
+                text: 'Digits :'
+            MDTextField:
+                id: number_character_digit
+                
+            MDSwitch:
+                id: digit_switch
+                widget_style: 'android'
+                active: False
+                icon_active: 'check'
+                track_color_disabled: "lightgrey"
+                pos_hint: {'center_x': 1,'center_y': .5}
+
+        MDTextField:
+            id: password_text
+            hint_text: 'Your password generate here !'
+            mode: 'rectangle'
+        
+        MDRaisedButton:
+            text: 'Generer'
+            md_bg_color: 26/255, 122/255, 252/255, 1
+            pos_hint: {"center_x": .5, "center_y": .5}
+            size_hint_y: None
+            height: "50dp"
+            font_size: 30
+            on_release: root.generate()
+
+        Widget:
+
